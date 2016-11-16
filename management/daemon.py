@@ -438,7 +438,7 @@ def system_status():
 			self.items[-1]["extra"].append({ "text": message, "monospace": monospace })
 	output = WebOutput()
 	# Create a temporary pool of processes for the status checks
-	pool = multiprocessing.pool.Pool(processes=5)
+	pool = multiprocessing.pool.Pool(processes=2)
 	run_checks(False, env, output, pool)
 	pool.terminate()
 	return json_response(output.items)

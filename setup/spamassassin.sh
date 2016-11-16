@@ -49,7 +49,8 @@ echo "public.pyzor.org:24441" > /etc/spamassassin/pyzor/servers
 tools/editconf.py /etc/default/spampd \
 	DESTPORT=10026 \
 	ADDOPTS="\"--maxsize=500\"" \
-	LOCALONLY=0
+	LOCALONLY=0 \
+	CHILDREN=1
 
 # Spamassassin normally wraps spam as an attachment inside a fresh
 # email with a report about the message. This also protects the user
